@@ -41,10 +41,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.1rem 5%;
+      padding: 0.6rem 5%;
       background: rgba(238, 233, 223, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(26,40,56,0.06);
+      transition: padding 0.3s ease;
+    }
+
+    nav.scrolled {
+      padding: 0.4rem 5%;
     }
 
     .nav-brand {
@@ -1056,6 +1061,11 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
   </script>
 
 </body>
