@@ -55,7 +55,7 @@
       );
     }
 
-    #hero > * { position: relative; z-index: 1; }
+    #hero > * { z-index: 1; }
 
     /* Text block — top left */
     .hero-text-block {
@@ -76,6 +76,15 @@
       z-index: 1;
     }
 
+    .hero-badge-wrap {
+      position: absolute;
+      top: calc(50% + 175px);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      text-align: center;
+    }
+
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -87,7 +96,6 @@
       font-weight: 500;
       padding: 0.4rem 1rem;
       border-radius: 50px;
-      margin-bottom: 1.4rem;
     }
 
     .badge-dot {
@@ -110,9 +118,9 @@
       color: var(--terracotta);
     }
 
-    /* Sunset sky gradient for "not things." */
+    /* Weathered rust/aged copper for "not things." */
     .hero-title .accent-blue {
-      background: linear-gradient(100deg, #f0c080 0%, #e8846e 35%, #c8a0d8 68%, #87ceeb 100%);
+      background: linear-gradient(90deg, #7a3010 0%, #b85a22 40%, #d4924a 75%, #c4a060 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -655,10 +663,6 @@
 
     <!-- Text block: top left -->
     <div class="hero-text-block fade-up">
-      <div class="hero-badge">
-        <div class="badge-dot"></div>
-        Your private travel atlas
-      </div>
       <h1 class="hero-title">
         Collect memories,<br /><span class="accent-blue">not things.</span>
       </h1>
@@ -725,6 +729,14 @@
         <text x="48" y="154" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#d4b896" opacity="0.7">SW</text>
         <text x="48" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#d4b896" opacity="0.7">NW</text>
       </svg>
+    </div>
+
+    <!-- Badge: below compass -->
+    <div class="hero-badge-wrap fade-up">
+      <div class="hero-badge">
+        <div class="badge-dot"></div>
+        Your private travel atlas
+      </div>
     </div>
 
     <div class="hero-scroll-hint">
