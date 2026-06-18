@@ -686,6 +686,63 @@
       text-align: center;
     }
 
+    /* ─── Phone 1: Featured split-screen ─── */
+    .phone-featured {
+      transform: translateX(-2.5rem);
+    }
+
+    .phone-featured .phone-frame {
+      width: 260px;
+      transform: rotate(-2.5deg);
+    }
+
+    .phone-featured .phone-frame:hover {
+      transform: rotate(0deg) translateY(-8px);
+    }
+
+    .split-screen {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .split-half {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .split-half img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .split-divider {
+      width: 4px;
+      background: white;
+      flex-shrink: 0;
+    }
+
+    .paris-pin {
+      position: absolute;
+      width: 20px;
+      height: 27px;
+      left: 54%;
+      top: 36%;
+      transform: translateX(-50%);
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+      z-index: 2;
+    }
+
+    .marker-mask {
+      position: absolute;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(2px);
+    }
+
     /* ─── CTA ─── */
     #cta {
       background: var(--navy);
@@ -1006,36 +1063,35 @@
 
       <div class="screenshots-row fade-up">
 
-        <!-- Phone 1: Scan -->
-        <div class="phone-wrap">
+        <!-- Phone 1: Split map view -->
+        <div class="phone-wrap phone-featured">
           <div class="phone-frame">
             <div class="phone-inner">
               <div class="phone-status"><div class="phone-notch"></div></div>
-              <div class="phone-body">
-                <div class="phone-title">Scan a Photo</div>
-                <div class="scan-area">
-                  <div class="scan-target">
-                    <span class="scan-inner-compass">
-                      <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
-                        <circle cx="22" cy="22" r="20" stroke="#e5d09d" stroke-width="1.2" fill="white" fill-opacity="0.12"/>
-                        <circle cx="22" cy="22" r="13" stroke="#e5d09d" stroke-width="0.6" stroke-dasharray="2 3" fill="none" opacity="0.4"/>
-                        <line x1="22" y1="2" x2="22" y2="7" stroke="#e5d09d" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-                        <line x1="22" y1="37" x2="22" y2="42" stroke="#e5d09d" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-                        <line x1="2" y1="22" x2="7" y2="22" stroke="#e5d09d" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-                        <line x1="37" y1="22" x2="42" y2="22" stroke="#e5d09d" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
-                        <path d="M22,10 L20.5,22 L22,20 L23.5,22 Z" fill="#e5d09d"/>
-                        <path d="M22,34 L20.5,22 L22,24 L23.5,22 Z" fill="#e5d09d"/>
-                        <circle cx="22" cy="22" r="2.8" fill="#e5d09d"/>
-                        <circle cx="22" cy="22" r="1.3" fill="#1a2838"/>
-                      </svg>
-                    </span>
-                  </div>
-                  <div class="scan-label">Scanning location…</div>
+              <div class="split-screen">
+                <!-- Left half: France map with Paris pin -->
+                <div class="split-half">
+                  <img src="Image1.PNG" alt="France map">
+                  <!-- Blue pin on Paris -->
+                  <svg class="paris-pin" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C7.03 0 3 4.03 3 9c0 6.75 9 21 9 21s9-14.25 9-21c0-4.97-4.03-9-9-9z" fill="#2563eb"/>
+                    <circle cx="12" cy="9" r="4" fill="white"/>
+                  </svg>
+                </div>
+                <!-- White divider bar -->
+                <div class="split-divider"></div>
+                <!-- Right half: Image3 with most markers hidden -->
+                <div class="split-half split-right-half">
+                  <img src="Image3.PNG" alt="Map view">
+                  <!-- Mask to hide most blue markers, leave one visible -->
+                  <div class="marker-mask" style="top:10%;left:0;width:100%;height:25%;"></div>
+                  <div class="marker-mask" style="top:55%;left:0;width:100%;height:45%;"></div>
+                  <div class="marker-mask" style="top:35%;left:55%;width:45%;height:20%;"></div>
                 </div>
               </div>
             </div>
           </div>
-          <p class="phone-caption">Instant Photo Log</p>
+          <p class="phone-caption">Your Journey Map</p>
         </div>
 
         <!-- Phone 2: Rankings -->
