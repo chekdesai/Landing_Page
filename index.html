@@ -8,6 +8,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
   <style>
+    @font-face {
+      font-family: 'Avara';
+      src: url('Avara-Black.woff2') format('woff2');
+      font-weight: 900;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Avara';
+      src: url('Avara-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Avara';
+      src: url('Avara-BoldItalic.woff2') format('woff2');
+      font-weight: 700;
+      font-style: italic;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -76,11 +95,11 @@
       z-index: 2;
     }
 
-    /* Compass — centered between the two foreground horses */
+    /* Compass — shifted down and left, 20% smaller */
     .compass-wrap {
       position: absolute;
-      top: 22%;
-      left: 56%;
+      top: 34%;
+      left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
     }
@@ -115,7 +134,12 @@
       background: var(--terracotta);
     }
 
+    .hero-divider {
+      margin: 1.1rem 0 1.1rem;
+    }
+
     .hero-title {
+      font-family: 'Avara', 'DM Sans', sans-serif;
       font-size: clamp(3rem, 6.5vw, 6rem);
       font-weight: 900;
       line-height: 1.0;
@@ -137,10 +161,11 @@
     }
 
     .hero-subtitle {
+      font-family: 'Avara', 'DM Sans', sans-serif;
       font-size: clamp(1rem, 2vw, 1.15rem);
       color: #f0e6d3;
       max-width: 100%;
-      font-weight: 500;
+      font-weight: 700;
       line-height: 1.75;
       text-shadow: 0 1px 6px rgba(0,0,0,0.7), 0 2px 16px rgba(0,0,0,0.4);
       letter-spacing: 0.01em;
@@ -685,6 +710,19 @@
       <h1 class="hero-title">
         Collect memories,<br /><span class="accent-blue">not things.</span>
       </h1>
+
+      <!-- Decorative divider -->
+      <div class="hero-divider">
+        <svg width="260" height="18" viewBox="0 0 260 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="9" x2="108" y2="9" stroke="#d4a853" stroke-width="1" opacity="0.7"/>
+          <line x1="152" y1="9" x2="260" y2="9" stroke="#d4a853" stroke-width="1" opacity="0.7"/>
+          <rect x="121" y="2" width="18" height="14" rx="0" transform="rotate(45 130 9)" fill="none" stroke="#d4a853" stroke-width="1.2"/>
+          <rect x="125.5" y="5.5" width="9" height="7" rx="0" transform="rotate(45 130 9)" fill="#d4a853" opacity="0.6"/>
+          <circle cx="112" cy="9" r="1.8" fill="#d4a853" opacity="0.6"/>
+          <circle cx="148" cy="9" r="1.8" fill="#d4a853" opacity="0.6"/>
+        </svg>
+      </div>
+
       <p class="hero-subtitle">
         The Rango app automatically logs your trips from photos, then lets you rank your adventures. Every experience is remembered.
       </p>
@@ -695,7 +733,7 @@
 
     <!-- Compass: dead center -->
     <div class="compass-wrap fade-up">
-      <svg width="560" height="560" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="448" height="448" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Outer ring (single — removing r=88 ring which was clipping NE/NW/SE/SW labels) -->
         <circle cx="100" cy="100" r="94" stroke="#EEF4FB" stroke-width="1.5" opacity="0.9"/>
         <!-- Cardinal tick marks — short notches only -->
