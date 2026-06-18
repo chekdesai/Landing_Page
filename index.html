@@ -327,7 +327,7 @@
 
     /* Stop card */
     .stop-card {
-      width: calc(50% - 64px);
+      width: calc(50% - 52px);
       background: rgba(6, 10, 18, 0.68);
       border: 1px solid rgba(212,184,150,0.28);
       backdrop-filter: blur(6px);
@@ -841,6 +841,16 @@
       display: block;
     }
 
+    .frosted-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 18px;
+      padding: 0.55rem 1.8rem;
+    }
+
     /* ─── CTA ─── */
     #cta {
       background: var(--navy);
@@ -1156,7 +1166,9 @@
   <section id="screenshots">
     <div class="container">
       <div class="section-header center fade-up">
-        <h2 class="section-title" style="font-family:'Playfair Display',serif; color:#ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.7);">See it in action</h2>
+        <div class="frosted-badge">
+          <h2 class="section-title" style="font-family:'Playfair Display',serif; color:#1a2838; margin:0;">See it in action</h2>
+        </div>
       </div>
 
       <div class="screenshots-row fade-up">
@@ -1437,17 +1449,9 @@
 
       <div class="cta-buttons">
         <a href="#" class="store-btn">
-          <span class="store-icon">🍎</span>
           <div class="store-label">
             <small>Download on the</small>
-            <strong>App Store</strong>
-          </div>
-        </a>
-        <a href="#" class="store-btn">
-          <span class="store-icon">▶</span>
-          <div class="store-label">
-            <small>Get it on</small>
-            <strong>Google Play</strong>
+            <strong>Beta test today</strong>
           </div>
         </a>
       </div>
