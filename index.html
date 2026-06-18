@@ -738,6 +738,66 @@
       z-index: 2;
     }
 
+    .flip-container {
+      perspective: 800px;
+      overflow: hidden;
+    }
+
+    .flip-card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease;
+    }
+
+    .flip-container.flipped .flip-card {
+      transform: rotateY(180deg);
+    }
+
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+    }
+
+    .flip-face img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+
+    .flip-btn {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.88);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    .flip-btn:hover {
+      background: rgba(255,255,255,1);
+      transform: scale(1.1);
+    }
+
     /* ─── CTA ─── */
     #cta {
       background: var(--navy);
@@ -1064,20 +1124,61 @@
             <div class="phone-inner">
               <div class="phone-status"><div class="phone-notch"></div></div>
               <div class="split-screen">
-                <!-- Top half: Europe map with Paris pin -->
-                <div class="split-half">
-                  <img src="Image1.PNG" alt="Europe map">
-                  <!-- Blue pin on Paris -->
-                  <svg class="paris-pin" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 0C7.03 0 3 4.03 3 9c0 6.75 9 21 9 21s9-14.25 9-21c0-4.97-4.03-9-9-9z" fill="#2563eb"/>
-                    <circle cx="12" cy="9" r="4" fill="white"/>
-                  </svg>
+                <!-- Top half: flips between Image1 and Image2 -->
+                <div class="split-half flip-container" id="flip-top">
+                  <div class="flip-card">
+                    <div class="flip-face flip-front">
+                      <img src="Image1.PNG" alt="Europe map">
+                      <svg class="paris-pin" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C7.03 0 3 4.03 3 9c0 6.75 9 21 9 21s9-14.25 9-21c0-4.97-4.03-9-9-9z" fill="#2563eb"/>
+                        <circle cx="12" cy="9" r="4" fill="white"/>
+                      </svg>
+                      <button class="flip-btn" onclick="flipCard('flip-top')">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1a2838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 4v6h6"/><path d="M23 20v-6h-6"/>
+                          <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10"/>
+                          <path d="M3.51 15a9 9 0 0 0 14.85 3.36L23 14"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="flip-face flip-back">
+                      <img src="Image2.PNG" alt="Map view 2">
+                      <button class="flip-btn" onclick="flipCard('flip-top')">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1a2838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 4v6h6"/><path d="M23 20v-6h-6"/>
+                          <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10"/>
+                          <path d="M3.51 15a9 9 0 0 0 14.85 3.36L23 14"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
                 </div>
                 <!-- Horizontal white divider bar -->
                 <div class="split-divider"></div>
-                <!-- Bottom half: El Salvador map with blue markers -->
-                <div class="split-half">
-                  <img src="Image3.PNG" alt="El Salvador map">
+                <!-- Bottom half: flips between Image3 and Image4 -->
+                <div class="split-half flip-container" id="flip-bottom">
+                  <div class="flip-card">
+                    <div class="flip-face flip-front">
+                      <img src="Image3.PNG" alt="El Salvador map">
+                      <button class="flip-btn" onclick="flipCard('flip-bottom')">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1a2838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 4v6h6"/><path d="M23 20v-6h-6"/>
+                          <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10"/>
+                          <path d="M3.51 15a9 9 0 0 0 14.85 3.36L23 14"/>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="flip-face flip-back">
+                      <img src="Image4.PNG" alt="Map view 4">
+                      <button class="flip-btn" onclick="flipCard('flip-bottom')">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1a2838" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M1 4v6h6"/><path d="M23 20v-6h-6"/>
+                          <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10"/>
+                          <path d="M3.51 15a9 9 0 0 0 14.85 3.36L23 14"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1286,6 +1387,10 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    function flipCard(id) {
+      document.getElementById(id).classList.toggle('flipped');
+    }
 
   </script>
 
