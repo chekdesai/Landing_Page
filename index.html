@@ -154,7 +154,7 @@
 
     /* Weathered rust/aged copper for "not things." */
     .hero-title .accent-blue {
-      background: linear-gradient(90deg, #7a3010 0%, #b85a22 40%, #d4924a 75%, #c4a060 100%);
+      background: linear-gradient(90deg, #b85a22 0%, #d4924a 40%, #e8aa60 75%, #d4b87a 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -281,21 +281,29 @@
     }
     #features > * { position: relative; z-index: 1; }
 
+    #features .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+
     #features .section-header {
+      width: 32%;
+      flex-shrink: 0;
       text-align: right;
-      margin-left: auto;
-      margin-right: 2%;
-      max-width: 36%;
+      margin: 0;
       padding-top: 0;
-      margin-top: -3rem;
+      order: 2;
     }
 
     /* ─── JOURNEY TRAIL ─── */
     .journey-trail {
       position: relative;
-      max-width: 820px;
-      margin: 3rem auto 0;
+      flex: 1;
+      margin: 0;
+      max-width: none;
       padding: 0.5rem 0 2rem;
+      order: 1;
     }
 
     /* Dashed vertical path down the center */
@@ -306,7 +314,7 @@
       top: 0;
       bottom: 0;
       transform: translateX(-50%);
-      border-left: 1.5px dashed rgba(212,184,150,0.45);
+      border-left: 2px dashed rgba(212,184,150,0.8);
     }
 
     .trail-stop {
@@ -322,7 +330,7 @@
 
     /* Stop card */
     .stop-card {
-      width: calc(50% - 52px);
+      width: calc(50% - 64px);
       background: rgba(6, 10, 18, 0.68);
       border: 1px solid rgba(212,184,150,0.28);
       backdrop-filter: blur(6px);
@@ -337,18 +345,18 @@
     .stop-left .stop-card::after {
       content: '';
       position: absolute;
-      right: -40px;
+      right: -52px;
       top: 50%;
-      width: 40px;
-      border-top: 1px dashed rgba(212,184,150,0.4);
+      width: 52px;
+      border-top: 2px dashed rgba(212,184,150,0.75);
     }
     .stop-right .stop-card::after {
       content: '';
       position: absolute;
-      left: -40px;
+      left: -52px;
       top: 50%;
-      width: 40px;
-      border-top: 1px dashed rgba(212,184,150,0.4);
+      width: 52px;
+      border-top: 2px dashed rgba(212,184,150,0.75);
     }
 
     /* Center node — circular waypoint marker */
