@@ -273,7 +273,24 @@
       background-position: center 30%;
       background-attachment: fixed;
     }
+    #features::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.10);
+    }
     #features > * { position: relative; z-index: 1; }
+
+    #features .section-header {
+      text-align: right;
+      margin-left: auto;
+      margin-right: 0;
+      max-width: 44%;
+    }
+    #features .section-header .section-sub {
+      margin-left: auto;
+      margin-right: 0;
+    }
 
     .features-grid {
       display: grid;
@@ -794,7 +811,7 @@
   <!-- FEATURES -->
   <section id="features">
     <div class="container">
-      <div class="section-header center fade-up">
+      <div class="section-header fade-up">
         <p class="section-eyebrow">What Rango Does</p>
         <h2 class="section-title">Every feature built for<br />the way you travel</h2>
         <p class="section-sub">From snapping a photo to ranking your top trips, Rango handles the rest quietly in the background.</p>
