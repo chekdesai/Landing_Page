@@ -38,13 +38,22 @@
     #hero {
       min-height: 100vh;
       position: relative;
-      background-image: url('hero.jpg');
-      background-size: cover;
-      background-position: center top;
       overflow: hidden;
     }
 
+    /* Flipped background image */
     #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('hero.jpg');
+      background-size: cover;
+      background-position: center top;
+      transform: scaleX(-1);
+    }
+
+    /* Dark gradient overlay on top of flipped image */
+    #hero::after {
       content: '';
       position: absolute;
       inset: 0;
@@ -694,9 +703,9 @@
         <line x1="10"  y1="136" x2="16"  y2="133" stroke="#b0cde3" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>
         <line x1="10"  y1="64"  x2="16"  y2="67"  stroke="#b0cde3" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>
         <line x1="64"  y1="10"  x2="67"  y2="16"  stroke="#b0cde3" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>
-        <!-- Inner rings -->
-        <circle cx="100" cy="100" r="72" stroke="#b0cde3" stroke-width="1"   opacity="0.7"/>
-        <circle cx="100" cy="100" r="66" stroke="#b0cde3" stroke-width="0.4" opacity="0.35"/>
+        <!-- Inner rings — original warm gold -->
+        <circle cx="100" cy="100" r="72" stroke="#d4b896" stroke-width="1"   opacity="0.7"/>
+        <circle cx="100" cy="100" r="66" stroke="#d4b896" stroke-width="0.4" opacity="0.35"/>
         <!-- 8-pointed rose subtle fill -->
         <polygon points="100,40 107.65,81.5 131.8,68.2 118.5,92.4 160,100 118.5,107.6 131.8,131.8 107.65,118.5 100,160 92.35,118.5 68.2,131.8 81.5,107.6 40,100 81.5,92.4 68.2,68.2 92.35,81.5" fill="#b0cde3" opacity="0.07"/>
         <!-- Major spikes N/S/E/W -->
@@ -704,11 +713,11 @@
         <polygon points="100,162 103.5,103 100,93 96.5,103" fill="#b0cde3"/>
         <polygon points="162,100 103,103.5 93,100 103,96.5" fill="#b0cde3"/>
         <polygon points="38,100 97,103.5 107,100 97,96.5"   fill="#b0cde3"/>
-        <!-- Minor spikes NE/SE/SW/NW -->
-        <polygon points="132,68 102,102 98,98"   fill="#b0cde3" opacity="0.85"/>
-        <polygon points="132,132 102,98 98,102"  fill="#b0cde3" opacity="0.85"/>
-        <polygon points="68,132 98,98 102,102"   fill="#b0cde3" opacity="0.85"/>
-        <polygon points="68,68 98,102 102,98"    fill="#b0cde3" opacity="0.85"/>
+        <!-- Minor spikes NE/SE/SW/NW — original warm gold -->
+        <polygon points="132,68 102,102 98,98"   fill="#d4b896" opacity="0.85"/>
+        <polygon points="132,132 102,98 98,102"  fill="#d4b896" opacity="0.85"/>
+        <polygon points="68,132 98,98 102,102"   fill="#d4b896" opacity="0.85"/>
+        <polygon points="68,68 98,102 102,98"    fill="#d4b896" opacity="0.85"/>
         <!-- Cardinal labels — at r=83 (clearly between r=72 inner and r=94 outer) -->
         <text x="100" y="17"  text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#b0cde3">N</text>
         <text x="100" y="183" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#b0cde3">S</text>
