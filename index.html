@@ -282,28 +282,25 @@
     #features > * { position: relative; z-index: 1; }
 
     #features .container {
-      display: flex;
-      align-items: flex-start;
-      gap: 3rem;
+      position: relative;
     }
 
     #features .section-header {
-      width: 32%;
-      flex-shrink: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30%;
       text-align: right;
       margin: 0;
-      padding-top: 0;
-      order: 2;
+      z-index: 2;
     }
 
     /* ─── JOURNEY TRAIL ─── */
     .journey-trail {
       position: relative;
-      flex: 1;
-      margin: 0;
-      max-width: none;
+      max-width: 680px;
+      margin: 0 auto;
       padding: 0.5rem 0 2rem;
-      order: 1;
     }
 
     /* Dashed vertical path down the center */
