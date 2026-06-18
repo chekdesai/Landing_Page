@@ -702,6 +702,7 @@
 
     .split-screen {
       display: flex;
+      flex-direction: column;
       flex: 1;
       overflow: hidden;
     }
@@ -721,7 +722,7 @@
     }
 
     .split-divider {
-      width: 4px;
+      height: 4px;
       background: white;
       flex-shrink: 0;
     }
@@ -735,12 +736,6 @@
       transform: translateX(-50%);
       filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
       z-index: 2;
-    }
-
-    .marker-mask {
-      position: absolute;
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(2px);
     }
 
     /* ─── CTA ─── */
@@ -1069,24 +1064,20 @@
             <div class="phone-inner">
               <div class="phone-status"><div class="phone-notch"></div></div>
               <div class="split-screen">
-                <!-- Left half: France map with Paris pin -->
+                <!-- Top half: Europe map with Paris pin -->
                 <div class="split-half">
-                  <img src="Image1.PNG" alt="France map">
+                  <img src="Image1.PNG" alt="Europe map">
                   <!-- Blue pin on Paris -->
                   <svg class="paris-pin" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 0C7.03 0 3 4.03 3 9c0 6.75 9 21 9 21s9-14.25 9-21c0-4.97-4.03-9-9-9z" fill="#2563eb"/>
                     <circle cx="12" cy="9" r="4" fill="white"/>
                   </svg>
                 </div>
-                <!-- White divider bar -->
+                <!-- Horizontal white divider bar -->
                 <div class="split-divider"></div>
-                <!-- Right half: Image3 with most markers hidden -->
-                <div class="split-half split-right-half">
-                  <img src="Image3.PNG" alt="Map view">
-                  <!-- Mask to hide most blue markers, leave one visible -->
-                  <div class="marker-mask" style="top:10%;left:0;width:100%;height:25%;"></div>
-                  <div class="marker-mask" style="top:55%;left:0;width:100%;height:45%;"></div>
-                  <div class="marker-mask" style="top:35%;left:55%;width:45%;height:20%;"></div>
+                <!-- Bottom half: El Salvador map with blue markers -->
+                <div class="split-half">
+                  <img src="Image3.PNG" alt="El Salvador map">
                 </div>
               </div>
             </div>
