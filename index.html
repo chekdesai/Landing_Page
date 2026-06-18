@@ -67,11 +67,11 @@
       z-index: 2;
     }
 
-    /* Compass — upper right, center at horse's nose */
+    /* Compass — between badge and download button */
     .compass-wrap {
       position: absolute;
       top: 22%;
-      left: 60%;
+      left: 68%;
       transform: translate(-50%, -50%);
       z-index: 1;
     }
@@ -681,11 +681,11 @@
         <!-- Outer rings -->
         <circle cx="100" cy="100" r="94" stroke="#d4b896" stroke-width="1.5" opacity="0.9"/>
         <circle cx="100" cy="100" r="88" stroke="#d4b896" stroke-width="0.5" opacity="0.4"/>
-        <!-- Cardinal tick marks ON the outer ring -->
-        <line x1="100" y1="6"   x2="100" y2="17"  stroke="#d4b896" stroke-width="2"   stroke-linecap="round"/>
-        <line x1="100" y1="183" x2="100" y2="194"  stroke="#d4b896" stroke-width="2"   stroke-linecap="round"/>
-        <line x1="6"   y1="100" x2="17"  y2="100"  stroke="#d4b896" stroke-width="2"   stroke-linecap="round"/>
-        <line x1="183" y1="100" x2="194" y2="100"  stroke="#d4b896" stroke-width="2"   stroke-linecap="round"/>
+        <!-- Cardinal tick marks — short, only 5 units inward so they stay far from labels -->
+        <line x1="100" y1="6"   x2="100" y2="11"  stroke="#d4b896" stroke-width="2"   stroke-linecap="round"/>
+        <line x1="100" y1="189" x2="100" y2="194"  stroke="#d4b896" stroke-width="2"   stroke-linecap="round"/>
+        <line x1="6"   y1="100" x2="11"  y2="100"  stroke="#d4b896" stroke-width="2"   stroke-linecap="round"/>
+        <line x1="189" y1="100" x2="194" y2="100"  stroke="#d4b896" stroke-width="2"   stroke-linecap="round"/>
         <!-- Intercardinal tick marks removed — they overlapped the NE/NW/SE/SW labels -->
         <!-- Minor ticks every 22.5° -->
         <line x1="136" y1="10" x2="133" y2="16"   stroke="#d4b896" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>
@@ -711,16 +711,16 @@
         <polygon points="132,132 102,98 98,102"  fill="#d4b896" opacity="0.85"/>
         <polygon points="68,132 98,98 102,102"   fill="#d4b896" opacity="0.85"/>
         <polygon points="68,68 98,102 102,98"    fill="#d4b896" opacity="0.85"/>
-        <!-- Cardinal labels — at r=76, well inside outer ring (r=94) and outside spike tips (r=62) -->
-        <text x="100" y="24"  text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#d4b896">N</text>
-        <text x="100" y="176" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#d4b896">S</text>
-        <text x="24"  y="100" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#d4b896">W</text>
-        <text x="176" y="100" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#d4b896">E</text>
-        <!-- Intercardinal labels — at r=75 at 45°, tick marks removed so no dash through text -->
-        <text x="153" y="47"  text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="7.5" fill="#d4b896" opacity="0.75">NE</text>
-        <text x="153" y="153" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="7.5" fill="#d4b896" opacity="0.75">SE</text>
-        <text x="47"  y="153" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="7.5" fill="#d4b896" opacity="0.75">SW</text>
-        <text x="47"  y="47"  text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="7.5" fill="#d4b896" opacity="0.75">NW</text>
+        <!-- Cardinal labels — at r=79, clear of both tick tips (r=89) and spike tips (r=62) -->
+        <text x="100" y="21"  text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#d4b896">N</text>
+        <text x="100" y="179" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#d4b896">S</text>
+        <text x="21"  y="100" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#d4b896">W</text>
+        <text x="179" y="100" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="700" fill="#d4b896">E</text>
+        <!-- Intercardinal labels — at r=83 at 45° (58.7 offset), well outside inner ring (r=72) -->
+        <text x="159" y="41"  text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="7.5" fill="#d4b896" opacity="0.75">NE</text>
+        <text x="159" y="159" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="7.5" fill="#d4b896" opacity="0.75">SE</text>
+        <text x="41"  y="159" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="7.5" fill="#d4b896" opacity="0.75">SW</text>
+        <text x="41"  y="41"  text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="7.5" fill="#d4b896" opacity="0.75">NW</text>
         <!-- Center ornament -->
         <circle cx="100" cy="100" r="12" fill="#d4b896"/>
         <circle cx="100" cy="100" r="8"  fill="#8a5a30"/>
