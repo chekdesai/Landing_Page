@@ -789,11 +789,12 @@
     }
 
     .flip-face img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
-      display: block;
     }
 
     .flip-back {
@@ -822,9 +823,22 @@
       top: 38px;
     }
 
+    #flip-bottom .flip-btn {
+      top: 14px;
+    }
+
     .flip-btn:hover {
       background: rgba(255,255,255,1);
       transform: scale(1.1);
+    }
+
+    .phone-nav-bar {
+      flex-shrink: 0;
+    }
+
+    .phone-nav-bar img {
+      width: 100%;
+      display: block;
     }
 
     /* ─── CTA ─── */
@@ -1142,7 +1156,7 @@
   <section id="screenshots">
     <div class="container">
       <div class="section-header center fade-up">
-        <h2 class="section-title" style="font-family:'Playfair Display',serif; color:#1a2838;">See it in action</h2>
+        <h2 class="section-title" style="font-family:'Playfair Display',serif; color:#ffffff; text-shadow: 0 2px 12px rgba(0,0,0,0.55), 0 1px 3px rgba(0,0,0,0.7);">See it in action</h2>
       </div>
 
       <div class="screenshots-row fade-up">
@@ -1229,6 +1243,10 @@
                     </div>
                   </div>
                 </div>
+              </div>
+              <!-- Bottom navigation bar -->
+              <div class="phone-nav-bar">
+                <img src="Bottom.jpg" alt="App navigation">
               </div>
             </div>
           </div>
