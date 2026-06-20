@@ -453,9 +453,9 @@
 
     .screenshots-row {
       display: flex;
-      gap: 1.8rem;
+      gap: 3.5rem;
       justify-content: center;
-      align-items: flex-end;
+      align-items: flex-start;
       flex-wrap: wrap;
     }
 
@@ -475,12 +475,7 @@
       transition: transform 0.3s;
     }
 
-    .phone-frame:nth-child(1) { transform: rotate(-2.5deg); }
-    .phone-frame:nth-child(1):hover { transform: rotate(0deg) translateY(-8px); }
-    .phone-frame:nth-child(2) { transform: translateY(-16px); }
-    .phone-frame:nth-child(2):hover { transform: translateY(-24px); }
-    .phone-frame:nth-child(3) { transform: rotate(2.5deg); }
-    .phone-frame:nth-child(3):hover { transform: rotate(0deg) translateY(-8px); }
+    .phone-frame:hover { transform: translateY(-8px); }
 
     .phone-inner {
       background: var(--cream);
@@ -707,17 +702,13 @@
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--navy);
-      opacity: 0.65;
       text-align: center;
+      order: -1;
     }
 
     /* ─── Phone 1: Featured split-screen ─── */
-    .phone-featured .phone-frame {
-      transform: rotate(-2.5deg);
-    }
-
     .phone-featured .phone-frame:hover {
-      transform: rotate(0deg) translateY(-8px);
+      transform: translateY(-8px);
     }
 
     .split-screen {
