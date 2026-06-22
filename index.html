@@ -98,9 +98,9 @@
     /* Compass — shifted down and left, 20% smaller */
     .compass-wrap {
       position: absolute;
-      top: 34%;
+      top: 2.5rem;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       z-index: 1;
     }
 
@@ -1011,7 +1011,7 @@
 
     <!-- Compass: dead center -->
     <div class="compass-wrap fade-up">
-      <svg width="448" height="448" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="90" height="90" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Outer ring (single — removing r=88 ring which was clipping NE/NW/SE/SW labels) -->
         <circle cx="100" cy="100" r="94" stroke="#EEF4FB" stroke-width="1.5" opacity="0.9"/>
         <!-- Cardinal tick marks — short notches only -->
