@@ -972,6 +972,10 @@
 
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+    /* Preserve centering transform when fade-up completes */
+    .hero-text-block.fade-up { transform: translate(-50%, calc(-50% + 24px)); }
+    .hero-text-block.fade-up.visible { transform: translate(-50%, -50%); }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 680px) {
       .nav-link { display: none; }
